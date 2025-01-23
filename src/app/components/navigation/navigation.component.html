@@ -1,0 +1,11 @@
+<!-- Botón para abrir el menú -->
+<button pButton type="button" icon="pi pi-bars" (click)="toggleSidebar()" label="Menú" class="p-button-text"></button>
+
+<!-- Menú Lateral -->
+<p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="10000">
+  <h3>Gestión de Productos</h3>
+  <ul class="menu-list">
+    <li (click)="navigateTo('/products')">Lista de Productos</li>
+    <li (click)="navigateTo('/add-product')">Agregar Producto</li>
+  </ul>
+</p-sidebar>
