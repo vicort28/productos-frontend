@@ -58,6 +58,34 @@ export class ProductListComponent {
     this.displayEditModal = true; 
   }
 
+    // Guardar los cambios del producto
+    saveChanges(): void {
+      if (this.editForm.valid && this.selectedProduct) {
+        const updatedProduct = this.editForm.value;
+        this.productService.updateProduct(this.selectedProduct.id, updatedProduct).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Éxito',
+              detail: 'Producto actualizado',
+              life: 3000,
+            });
+            this.displayEditModal = false;
+            this.selectedProduct = null; 
+            this.loadProducts(); 
+          },
+          error: () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Error al guardar los cambios',
+              life: 3000,
+            });
+          },
+        });
+      }
+    }
+
   // Confirmar antes de guardar cambios de edición
   confirmEdit(): void {
     this.confirmationService.confirm({
@@ -79,33 +107,7 @@ export class ProductListComponent {
   }
   
 
-  // Guardar los cambios del producto
-  saveChanges(): void {
-    if (this.editForm.valid && this.selectedProduct) {
-      const updatedProduct = this.editForm.value;
-      this.productService.updateProduct(this.selectedProduct.id, updatedProduct).subscribe({
-        next: () => {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Éxito',
-            detail: 'Producto actualizado',
-            life: 3000,
-          });
-          this.displayEditModal = false;
-          this.selectedProduct = null; 
-          this.loadProducts(); 
-        },
-        error: () => {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Error',
-            detail: 'Error al guardar los cambios',
-            life: 3000,
-          });
-        },
-      });
-    }
-  }
+
 
 
   // Cerrar el modal de edición
@@ -114,28 +116,9 @@ export class ProductListComponent {
     this.selectedProduct = null;
     this.editForm.reset();
   }
-  
+
 
   // Eliminar producto
-  confirmDelete(product: any): void {
-    this.confirmationService.confirm({
-      message: `¿Estás seguro de que deseas eliminar "${product.nombre}"?`,
-      header: 'Confirmación',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.deleteProduct(product.id);
-      },
-      reject: () => {
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Cancelado',
-          detail: 'Eliminación cancelada.',
-          life: 3000,
-        });
-      },
-    });
-  }
-
   deleteProduct(id: number): void {
     this.productService.deleteProduct(id).subscribe({
       next: () => {
@@ -157,6 +140,29 @@ export class ProductListComponent {
       },
     });
   }
+  
+
+  // Confirmación para eliminar producto
+  confirmDelete(product: any): void {
+    this.confirmationService.confirm({
+      message: `¿Estás seguro de que deseas eliminar "${product.nombre}"?`,
+      header: 'Confirmación',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.deleteProduct(product.id);
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Cancelado',
+          detail: 'Eliminación cancelada.',
+          life: 3000,
+        });
+      },
+    });
+  }
+
+
 
 
 }
