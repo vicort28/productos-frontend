@@ -30,12 +30,14 @@
   
         <div class="field">
           <label for="categoria">Categoría:</label>
-          <input type="text" id="categoria" formControlName="categoria" pInputText>
+          <p-dropdown  
+              id="categoria" [options]="categorias" formControlName="categoria"placeholder="Selecciona una categoría">
+          </p-dropdown>
           <small *ngIf="productForm.get('categoria')?.invalid && productForm.get('categoria')?.touched" class="p-error">
             No se puede continuar sin categoría.
           </small>
         </div>
-  
+        
         <button 
           type="button" pButton label="Guardar" class="p-button-success" (click)="confirmAddProduct()"  [disabled]="productForm.invalid"></button>
       </form>

@@ -14,6 +14,14 @@ export class ProductListComponent {
   editForm: FormGroup; // Formulario de edición
   displayEditModal: boolean = false; // Controla la visibilidad del modal
 
+  categorias: any[] = [
+    { label: 'Electrónica', value: 'Electrónica' },
+    { label: 'Hogar', value: 'Hogar' },
+    { label: 'Ropa', value: 'Ropa' },
+    { label: 'Deportes', value: 'Deportes' },
+    { label: 'Otros', value: 'Otros' }
+  ];
+
   constructor(
     private productService: ProductService,
     private messageService: MessageService,

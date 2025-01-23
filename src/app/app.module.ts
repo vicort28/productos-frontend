@@ -17,6 +17,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SidebarModule } from 'primeng/sidebar';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SidebarModule } from 'primeng/sidebar';
     BrowserAnimationsModule,
     ConfirmDialogModule,
     SidebarModule,
-    ToastModule
+    ToastModule,
+    DropdownModule
   ],
   providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],

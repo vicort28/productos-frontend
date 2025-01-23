@@ -76,22 +76,19 @@
   
       <div class="field">
         <label for="categoria">Categoría:</label>
-        <input id="categoria" formControlName="categoria" type="text" pInputText />
+        <p-dropdown 
+          id="categoria" class="categoria" [options]="categorias" formControlName="categoria" placeholder="Selecciona una categoría"  appendTo="body">
+        </p-dropdown>
         <small *ngIf="editForm.get('categoria')?.invalid && editForm.get('categoria')?.touched" class="p-error">
           La categoría es requerida.
         </small>
       </div>
+      
   
       <p-footer>
-        <button 
-        type="button" 
-        pButton 
-        label="Guardar" 
-        class="p-button-success" 
-        (click)="confirmEdit()" 
-        [disabled]="editForm.invalid">
+        <button type="button" pButton label="Guardar" class="p-button-success modal-boton" (click)="confirmEdit()" [disabled]="editForm.invalid">
       </button>
-        <button type="button" pButton label="Cancelar" class="p-button-secondary" (click)="closeEditModal()"></button>
+        <button type="button"  pButton label="Cancelar" class="p-button-secondary modal-boton" (click)="closeEditModal()"></button>
       </p-footer>
     </form>
   </p-dialog>

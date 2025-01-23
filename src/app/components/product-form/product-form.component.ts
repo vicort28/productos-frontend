@@ -13,6 +13,16 @@ export class ProductFormComponent {
   productForm:FormGroup;
 
 
+  categorias: any[] = [
+    { label: 'Electrónica', value: 'Electrónica' },
+    { label: 'Hogar', value: 'Hogar' },
+    { label: 'Ropa', value: 'Ropa' },
+    { label: 'Deportes', value: 'Deportes' },
+    { label: 'Otros', value: 'Otros' }
+  ];
+  
+
+
   constructor(
     private fb:FormBuilder,
     private productService: ProductService,
