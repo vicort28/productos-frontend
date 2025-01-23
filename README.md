@@ -16,7 +16,7 @@ Esta es una aplicación frontend creada con Angular (versión 16 ) que permite r
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
 - **Node.js**: Versión 14 o superior [Descargar Node.js](https://nodejs.org/)
-- **Angular CLI**: Versión 14 o superior [Documentación Angular CLI](https://angular.io/cli)
+- **Angular CLI**: Versión 16 [Documentación Angular CLI](https://angular.io/cli)
 - **Navegador Web**: Cualquier navegador moderno (Chrome, Firefox, Edge, etc.)
 
 ---
