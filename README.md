@@ -1,27 +1,86 @@
-# ProductosFrontend
+# CRUD de productos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Descripción
 
-## Development server
+Esta es una aplicación frontend creada con Angular (versión 16 ) que permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para gestionar productos. Permitiendo a los usuarios interactuar con las siguientes funcionalidades:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Formulario para crear/editar productos**: Permite a los usuarios agregar nuevos productos o modificar los existentes.
+- **Listado de productos**: Muestra una tabla con las opciones para editar o eliminar productos.
+- **Detalle de un producto**: Permite visualizar la información detallada de un producto seleccionado.
+- **Validación de formularios**: Los datos se validan antes de enviarlos al backend para garantizar su integridad.
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos del Sistema
 
-## Build
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Node.js**: Versión 14 o superior [Descargar Node.js](https://nodejs.org/)
+- **Angular CLI**: Versión 14 o superior [Documentación Angular CLI](https://angular.io/cli)
+- **Navegador Web**: Cualquier navegador moderno (Chrome, Firefox, Edge, etc.)
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalación
 
-## Running end-to-end tests
+Sigue estos pasos para instalar y ejecutar el proyecto localmente:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 1. Clonar el Repositorio
+Clona este repositorio en tu máquina local:
 
-## Further help
+```bash
+git clone https://github.com/vicort28/productos-frontend.git
+cd productos-frontend
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 2. Instalar Dependencias
+Instala todas las dependencias del proyecto ejecutando el siguiente comando:
+
+```bash
+npm install
+```
+
+### 3. Configurar el Entorno
+Si es necesario, crea un archivo `.env` para las configuraciones locales del entorno. Por ejemplo, la URL de la API backend.
+
+### 4. Ejecutar el Proyecto
+Inicia el servidor de desarrollo:
+
+```bash
+ng serve
+```
+
+Abre tu navegador y navega a `http://localhost:4200` para ver la aplicación en ejecución.
+
+---
+
+## Uso del Proyecto
+
+### Funcionalidades Principales
+
+1. **Crear un Producto**:
+   - Ve a la página "Agregar Producto".
+   - Completa el formulario y haz clic en "Guardar".
+
+2. **Editar un Producto**:
+   - En el listado de productos, haz clic en el botón "Editar" junto al producto deseado.
+   - Modifica los campos necesarios y guarda los cambios.
+
+3. **Eliminar un Producto**:
+   - En el listado de productos, haz clic en el botón "Eliminar" junto al producto deseado.
+   - Confirma la eliminación en el modal de confirmación.
+
+4. **Ver Detalle de un Producto**:
+   - Haz clic en el nombre de un producto en el listado para ver más detalles.
+
+---
+
+## Tecnologías Utilizadas
+
+- **Framework**: Angular 14+
+- **Estilos**: PrimeNG y SCSS
+- **Validaciones**: Formularios Reactivos en Angular
+- **Componentes UI**: PrimeNG para botones, tablas, modales y notificaciones
+- **Comunicación con Backend**: Servicios HTTP en Angular
+
+
